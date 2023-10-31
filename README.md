@@ -1,2 +1,2 @@
 # Tower_defense
-A python game made by pygame
+A 2D tower defense game made by pygame
