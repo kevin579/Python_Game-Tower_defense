@@ -19,16 +19,28 @@ Before you start each wave, there will be a grid to assist you.
 <img src = "readme_images/pygame-td (3).jpg">
 
 <br>
+
+### Blocks
 Press key 1 on your keyboard, you can choose the "Block". The block can block the enemies' path, and allow you to put your towers.
 
-If you click on a block without a tower on it, you will remove that block and have your money back.
+If you select block and click on a block without a tower on it, you will remove that block and have your money back.
 
 <br>
 <img src = "readme_images/pygame-td (4).jpg">
 <br>
+
 Note! You can not completly block the path! The program will not respond to your command.
 
 <br>
+
+### Towers
+You can press 2-7 to select the type of tower you want. The tower information will appear when the mouse hovers it.
+
+<br>
+
+Note: the tower can only be placed on a block
+
+<br>
+
 <img src = "readme_images/pygame-td (5).jpg">
 <img src = "readme_images/pygame-td (6).jpg">
-<img src = "readme_images/pygame-td (7).jpg">
