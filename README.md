@@ -34,7 +34,7 @@ Note! You can not completly block the path! The program will not respond to your
 <br>
 
 ### Towers
-You can press 2-7 to select the type of tower you want. The tower information will appear when the mouse hovers it.
+You can press 2-7 to select the type of tower you want. The tower information will appear when the mouse hovers it. Like the blocks, if you selected the tower and clicked on a tower, the tower will be removed and you will get your money back.
 
 <br>
 
