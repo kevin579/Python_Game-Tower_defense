@@ -23,10 +23,12 @@ Press key 1 on your keyboard, you can choose the "Block"
 
 <br>
 
-The block can block the enemies path, and allow you to put your towers.
+The block can block the enemies' path, and allow you to put your towers.
 
 <br>
 <img src = "readme_images/pygame-td (4).jpg">
+Note! You can not completly block the path! The program will not respond to your command.
+<br>
 <img src = "readme_images/pygame-td (5).jpg">
 <img src = "readme_images/pygame-td (6).jpg">
 <img src = "readme_images/pygame-td (7).jpg">
