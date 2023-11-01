@@ -43,4 +43,14 @@ Note: the tower can only be placed on a block
 <br>
 
 <img src = "readme_images/pygame-td (5).jpg">
+
+## Start
+Press enter to start the wave. Once you started, the grid will disapear and you cannot edit your towers any more.
+
+<br>
+
 <img src = "readme_images/pygame-td (6).jpg">
+
+Every wave will end when all the enemies disapear.
+There are 30 waves in total.
+If you exit the game, it will save your progress from your last completed wave.
