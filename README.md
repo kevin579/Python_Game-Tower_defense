@@ -7,6 +7,8 @@ The target is to avoid the enemies to enter your base
 <img src = "readme_images/pygame-td (1).jpg">
 <img src = "readme_images/pygame-td (2).jpg">
 <img src = "readme_images/pygame-td (3).jpg">
+<br>
+# Set Up part
 <img src = "readme_images/pygame-td (4).jpg">
 <img src = "readme_images/pygame-td (5).jpg">
 <img src = "readme_images/pygame-td (6).jpg">
