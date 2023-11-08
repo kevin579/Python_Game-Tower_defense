@@ -60,6 +60,10 @@ class Enemy(Sprite):
             self.hp = 5000*factor
             self.speed = 0.5
 
+        elif self.type =="k":
+            self.image = pygame.image.load("images//path.png").convert_alpha()
+            self.hp = 50000*factor
+            self.speed = self.settings.block_height
         self.max_hp = self.hp
        
 
@@ -82,6 +86,8 @@ class Enemy(Sprite):
         if self.x%self.block_width<=2 and self.y%self.block_height<=2:
             self.x_place = int(self.x//self.block_width)
             self.y_place = int(self.y//self.block_height)
+            self.x_place = min(self.settings.num_block_width-1,self.x_place)
+            self.y_place = min(self.settings.num_block_height-1,self.y_place)
             if self.x_place ==self.settings.num_block_width-1 and self.y_place ==self.settings.num_block_height-1:
                 return
             
@@ -122,5 +128,6 @@ class Enemy(Sprite):
         self.hp_now.y = self.hp_bar.y
 
         self.screen.blit(self.image,self.rect)
-        self.screen.fill(self.green,self.hp_bar)
-        self.screen.fill(self.red,self.hp_now)
+        if self.type !="k":
+            self.screen.fill(self.green,self.hp_bar)
+            self.screen.fill(self.red,self.hp_now)
