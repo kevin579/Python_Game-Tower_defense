@@ -15,11 +15,6 @@ class Background:
         self.lowest = game.settings.lowest
         self.settings = Settings(game)
 
-        # self.enemy = Enemy(game)
-        # self.tower = Tower(game)
-
-
-        # self.bg_image = pygame.image.load("images\\backgound_image.jpg").convert_alpha()
         self.bg_image = pygame.image.load("images\\bg_img.jpg").convert_alpha()
 
         self.bg_image = pygame.transform.scale(self.bg_image,(game.screen_width,game.screen_height))
@@ -136,37 +131,6 @@ class Background:
 
         self.text_to_screen(self.screen,"Cash: " + str(self.cash),self.screen_rect.width//10*8,game.settings.lowest+self.screen_rect.height//50,40)
         self.text_to_screen(self.screen,"Life: " + str(self.life),self.screen_rect.width//10*8,game.settings.lowest+self.screen_rect.height//15,40)
-
-
-
-
-
-        # self.screen.blit(self.start_image,self.start_rect)
-        # self.screen.blit(self.end_image,self.end_rect)
-
-        # pygame.draw.rect(self.screen,self.bar_color,self.bar)
-        
-
-        # self.screen.blit(self.block_image,self.block_rect)
-        # self.text_to_screen(self.screen,str(self.settings.price[0]),self.screen_rect.width//10*1+self.screen_rect.width//100,game.settings.lowest+self.screen_rect.height//12,30)
-
-        # self.screen.blit(self.tower_image,self.tower_rect)
-        # self.text_to_screen(self.screen,str(self.settings.price[1]),self.screen_rect.width//10*2+self.screen_rect.width//100,game.settings.lowest+self.screen_rect.height//12,30)
-
-        # self.screen.blit(self.tower2_image,self.tower2_rect)
-        # self.text_to_screen(self.screen,str(self.settings.price[2]),self.screen_rect.width//10*3+self.screen_rect.width//200,game.settings.lowest+self.screen_rect.height//12,30)
-
-        # self.screen.blit(self.tower3_image,self.tower3_rect)
-        # self.text_to_screen(self.screen,str(self.settings.price[3]),self.screen_rect.width//10*4+self.screen_rect.width//200,game.settings.lowest+self.screen_rect.height//12,30)
-
-        # self.screen.blit(self.tower4_image,self.tower4_rect)
-        # self.text_to_screen(self.screen,str(self.settings.price[4]),self.screen_rect.width//10*5+self.screen_rect.width//200,game.settings.lowest+self.screen_rect.height//12,30)
-
-        # self.screen.blit(self.tower5_image,self.tower5_rect)
-        # self.text_to_screen(self.screen,str(self.settings.price[5]),self.screen_rect.width//10*6,game.settings.lowest+self.screen_rect.height//12,30)
-
-        # self.screen.blit(self.tower6_image,self.tower6_rect)
-        # self.text_to_screen(self.screen,str(self.settings.price[6]),self.screen_rect.width//10*7,game.settings.lowest+self.screen_rect.height//12,30)
         
     def update_intro(self,game):
         mouse_pos = pygame.mouse.get_pos()
