@@ -2,6 +2,7 @@ import pygame
 from enemy import Enemy 
 from tower import Tower
 from settings import Settings
+
 class Background:
     def __init__(self,game):
         self.screen = game.screen 
@@ -172,40 +173,33 @@ class Background:
         if not game.enemy_move:
             self.update_graph()
 
-        mouse_hover_1 = self.block_rect.collidepoint(mouse_pos)
-        if mouse_hover_1:
+        if self.block_rect.collidepoint(mouse_pos):
             self.screen.blit(self.t1_intro,self.t1_rect)
-            return
+            return 
 
-        mouse_hover_2 = self.tower_rect.collidepoint(mouse_pos)
-        if mouse_hover_2:
+        if self.tower_rect.collidepoint(mouse_pos):
             self.screen.blit(self.t2_intro,self.t2_rect)
-            return
+            return 
 
-        mouse_hover_3 = self.tower2_rect.collidepoint(mouse_pos)
-        if mouse_hover_3:
+        if self.tower2_rect.collidepoint(mouse_pos):
             self.screen.blit(self.t3_intro,self.t3_rect)
-            return
+            return 
 
-        mouse_hover_4 = self.tower3_rect.collidepoint(mouse_pos)
-        if mouse_hover_4:
+        if self.tower3_rect.collidepoint(mouse_pos):
             self.screen.blit(self.t4_intro,self.t4_rect)
-            return
+            return 
 
-        mouse_hover_5 = self.tower4_rect.collidepoint(mouse_pos)
-        if mouse_hover_5:
+        if self.tower4_rect.collidepoint(mouse_pos):
             self.screen.blit(self.t5_intro,self.t5_rect)
-            return
+            return 
 
-        mouse_hover_6 = self.tower5_rect.collidepoint(mouse_pos)
-        if mouse_hover_6:
+        if self.tower5_rect.collidepoint(mouse_pos):
             self.screen.blit(self.t6_intro,self.t6_rect)
-            return
+            return 
 
-        mouse_hover_7 = self.tower6_rect.collidepoint(mouse_pos)
-        if mouse_hover_7:
+        if self.tower6_rect.collidepoint(mouse_pos):
             self.screen.blit(self.t7_intro,self.t7_rect)
-            return
+            return 
         
     def draw_rect_alpha(self,surface, color, rect):
         shape_surf = pygame.Surface(pygame.Rect(rect).size, pygame.SRCALPHA)
