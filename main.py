@@ -83,10 +83,17 @@ class Main:
                 self.run_wave()
 
             else:               
+                self.update_hint()
                 self.background.update_intro(self)
 
             pygame.display.flip()
 
+    def update_hint(self):
+        new_enemy = Enemy(self,"k",1+self.wave_num*1.25)
+        self.enemys.add(new_enemy)
+        self.update_enemy()
+        
+        # self.screen.fill((0,0,0),self.screen_rect)
     def run_wave(self):
         self.update_enemy()
         self.timer+=1
@@ -111,7 +118,6 @@ class Main:
          for xx in self.graph:
               for x in xx:
                    if x!=0:
-                        
                         tempcash+=self.settings.price[0]
                         if x !=1:
                              tempcash+=self.settings.price[x-1]
@@ -142,8 +148,9 @@ class Main:
                     self.cash+=60
             if enemy.rect.x>=self.screen_width-self.settings.block_width-4:
                 if enemy.rect.y>=self.settings.lowest-self.settings.block_height-4:
-                    self.life-=1
                     self.enemys.remove(enemy)
+                    if enemy.type!="k":
+                        self.life-=1
             
             enemy.update_enemy(self.path)
             enemy.draw_enemy() 
@@ -199,6 +206,7 @@ class Main:
                         mouse_pos = pygame.mouse.get_pos()
                         mouse_x = mouse_pos[0]
                         mouse_y = mouse_pos[1]
+                        self.get_mouseclick(mouse_pos)
                         if mouse_x<self.screen_width-2 and mouse_y<self.settings.lowest-2:
                             graph_x = mouse_x//self.settings.block_width
                             graph_y = mouse_y//self.settings.block_height
@@ -221,7 +229,23 @@ class Main:
                                                 self.towers.remove(tower) 
                                                 self.cash+=self.settings.price[tower.type]
                                                 break
-            
+                        
+    def get_mouseclick(self,mouse_pos):
+        if self.background.block_rect.collidepoint(mouse_pos):
+            self.t_type = 0
+        elif self.background.tower_rect.collidepoint(mouse_pos):
+            self.t_type = 1
+        elif self.background.tower2_rect.collidepoint(mouse_pos):
+            self.t_type = 2
+        elif self.background.tower3_rect.collidepoint(mouse_pos):
+            self.t_type = 3
+        elif self.background.tower4_rect.collidepoint(mouse_pos):
+            self.t_type = 4
+        elif self.background.tower5_rect.collidepoint(mouse_pos):
+            self.t_type = 5
+        elif self.background.tower6_rect.collidepoint(mouse_pos):
+            self.t_type = 6
+        self.background.update_highlight(self,self.t_type)
 
     def add_tower(self,graph_x,graph_y):
         self.graph[graph_y][graph_x] = self.t_type+1
@@ -310,6 +334,8 @@ class Main:
 
 
     def update_path(self,graph_x,graph_y,add = 1):
+        for i in self.graph:
+            print(i)
         rows = self.settings.num_block_height
         cols = self.settings.num_block_width
         self.path = [[0 for u in range(self.settings.num_block_width)] for i in range(self.settings.num_block_height)]
@@ -353,6 +379,7 @@ class Main:
             if queque ==[]:
                 self.graph[graph_y][graph_x] = 0
                 add = 0
+                self.update_path(graph_x,graph_y,add)
                 break
             
             start = list(queque)
@@ -366,6 +393,7 @@ class Main:
             new_block.rect.x = graph_x*self.settings.block_width
             new_block.rect.y = graph_y*self.settings.block_height
             self.blocks.add(new_block)
+            
 
   
 
