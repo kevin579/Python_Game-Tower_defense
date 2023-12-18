@@ -1,4 +1,4 @@
-import sys
+    import sys
 import os
 import pygame
 from background import Background
@@ -23,7 +23,6 @@ class Main:
         # print(self.graph)
         f.close()
 
-        # self.screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
         self.screen = pygame.display.set_mode((int(1366),int(768)))
 
         self.screen_rect = self.screen.get_rect()
